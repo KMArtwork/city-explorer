@@ -1,3 +1,30 @@
+# City Explorer
+
+**Author**: Kawika Miller
+
+**Version**: 1.0.0 
+<!-- (increment the patch/fix version number if you make more commits past your first submission) -->
+
+## Overview
+This application will allow a user to query various APIs about a specified location (e.g. city, state, etc.) and receive relevant information about that area such as its geographic information or the restaurants &/o businesses in the area.
+
+## Getting Started
+<!-- What are the steps that a user must take in order to build this app on their own machine and get it running? -->
+
+## Architecture
+This application utilizes JavaScript, React, Bootstrap, and Node
+
+## Change Log
+2023-02-20 : Initialize project
+
+## Credit and Collaborations
+
+
+
+-----------------------
+-----------------------
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
