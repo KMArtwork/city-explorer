@@ -26,7 +26,7 @@ class SearchContainer extends React.Component {
   // submits a request to locationiq for using the search term stored in this.state.query
   handleSubmitQuery = async (event) => {
     event.preventDefault();
-
+    this.setState({error: null});
     try {
       let request = {
         url: `https://us1.locationiq.com/v1/search?key=${ACCESS_TOKEN}&q=${this.state.query}&format=json`,
@@ -54,7 +54,10 @@ class SearchContainer extends React.Component {
         </Container>
         <Container style={{margin: '3rem 0'}}>
           <Row style={{justifyContent: 'center'}}>
-            {this.state.results.map((result) => <SearchResult name={result.display_name} lat={result.lat} lon={result.lon} icon={result.icon} />)}
+            {this.state.error 
+              ? <h6>{this.state.error.message}</h6> 
+              : this.state.results.map((result) => <SearchResult name={result.display_name} lat={result.lat} lon={result.lon} icon={result.icon} />
+            )}
           </Row>
         </Container>
       </>
