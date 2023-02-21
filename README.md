@@ -20,8 +20,54 @@ This application utilizes JavaScript, React, Bootstrap, and Node
 ## Credit and Collaborations
 
 
-
 -----------------------
+
+# Lab06 - Time Estimates
+
+## Task 01 - Set Up React Repo & API Keys
+
+Estimate of time needed to complete: 20m
+
+Start time: 3:15PM
+
+Finish time: 3:40PM
+
+Actual time needed to complete: 25m
+
+## Task 02 - Locations
+
+Estimate of time needed to complete: 45m
+
+Start time: 3:45
+
+Finish time: 5:00PM
+
+Actual time needed to complete: 75m
+
+## Task 03 - Map
+
+Estimate of time needed to complete: 30m
+
+Start time: 5:30
+
+Finish time: 6:20PM
+
+Actual time needed to complete: 50m
+
+*At some point my Access Token stopped working and I was getting 403 errors so I had to troubleshoot that. I ended up renewing my access token and for some reason I had to add 'http://localhost/3000' to my list of HTTP referrers even though just 'localhost' was working for the first half of the lab? 
+
+## Task 04 - Errors
+
+Estimate of time needed to complete: 5m
+
+Start time: 6:25PM
+
+Finish time: 6:28PM
+
+Actual time needed to complete: 3m
+
+*I was already storing error messages in state so I just needed to implement some conditional logic to display the error
+
 -----------------------
 
 
