@@ -54,7 +54,7 @@ class SearchContainer extends React.Component {
         </Container>
         <Container style={{margin: '3rem 0'}}>
           <Row style={{justifyContent: 'center'}}>
-            {this.state.results.map((result) => <SearchResult name={result.display_name} lat={result.lat} lon={result.lon} />)}
+            {this.state.results.map((result) => <SearchResult name={result.display_name} lat={result.lat} lon={result.lon} icon={result.icon} />)}
           </Row>
         </Container>
       </>
