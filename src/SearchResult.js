@@ -1,6 +1,8 @@
 import React from "react";
 import Card from 'react-bootstrap/Card';
 
+const ACCESS_TOKEN = process.env.REACT_APP_ACCESS_TOKEN;
+
 class SearchResult extends React.Component {
   constructor(props) {
     super(props);
@@ -11,13 +13,14 @@ class SearchResult extends React.Component {
   }
 
   render() {
+
     return(
-      <Card bg='primary' style={{width: '16rem', height: '20rem'}}>
-        {/* <Card.Header style={{overflowY: 'scroll', height: '20%'}}>
-          <h4>{this.props.name}</h4>
-        </Card.Header> */}
-        <Card.Body>
+      <Card bg='primary' style={{width: '16rem', height: '25rem', margin: '1rem'}}>
+        <Card.Header>
           <h6>{this.props.name}</h6>
+        </Card.Header>
+        <Card.Body>
+          <Card.Img src={`https://maps.locationiq.com/v3/staticmap?key=${ACCESS_TOKEN}&center=${this.props.lat},${this.props.lon}&zoom=18&markers=icon:${this.props.icon}|${this.props.lat},${this.props.lon}`} alt={this.props.name} />
         </Card.Body>
         <Card.Footer>
           <h6>Lat: {this.props.lat}</h6>
