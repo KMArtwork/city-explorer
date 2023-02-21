@@ -41,6 +41,7 @@ class SearchContainer extends React.Component {
     } catch (err) {
       console.log(err);
       this.setState({error: err})
+      console.log(ACCESS_TOKEN);
     }
   }
 
