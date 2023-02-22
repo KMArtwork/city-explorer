@@ -1,5 +1,6 @@
 import React from "react";
 import Card from 'react-bootstrap/Card';
+import Button from "react-bootstrap/Button";
 import axios from "axios";
 import Weather from "./Weather";
 
@@ -10,6 +11,7 @@ class SearchResult extends React.Component {
     super(props);
 
     this.state = {
+      error: null,
       showModal: false,
       weather: null,
     }
@@ -23,13 +25,14 @@ class SearchResult extends React.Component {
       }
 
       let response = await axios(request);
-
+      console.log(response);
       this.setState({
         weather: response.data,
         showModal: true
       })
     } catch (err) {
       this.setState({
+        showModal: true,
         error: err
       })
     }
@@ -46,25 +49,24 @@ class SearchResult extends React.Component {
     return(
       <>
         <Card bg='primary' style={{width: '16rem', height: '25rem', margin: '1rem'}}>
-        <Card.Header>
+        <Card.Header style={{ overflowY: 'scroll'}}>
           <h6>{this.props.name}</h6>
         </Card.Header>
         <Card.Body>
           <Card.Img 
-          src={`https://maps.locationiq.com/v3/staticmap?key=${ACCESS_TOKEN}&center=${this.props.lat},${this.props.lon}&zoom=18&markers=icon:${this.props.icon}|${this.props.lat},${this.props.lon}`} 
-          alt={this.props.name} 
-          onClick={this.handleDisplayWeather}
-          style={{cursor: 'pointer'}} />
+            src={`https://maps.locationiq.com/v3/staticmap?key=${ACCESS_TOKEN}&center=${this.props.lat},${this.props.lon}&zoom=18&markers=icon:${this.props.icon}|${this.props.lat},${this.props.lon}`} 
+            alt={this.props.name} 
+          />
+          <Button variant="success" onClick={this.handleDisplayWeather}>Weather</Button>
         </Card.Body>
         <Card.Footer>
           <h6>Lat: {this.props.lat}</h6>
           <h6>Lon: {this.props.lon}</h6>
-          {/* <h6>Forecast: {this.state.weather[0]}</h6> */}
         </Card.Footer>
       </Card>
 
       {this.state.showModal ? 
-        <Weather weather={this.state.weather} showModal={this.state.showModal} handleHideWeather={this.handleHideWeather} /> : null }
+        <Weather weather={this.state.weather} showModal={this.state.showModal} handleHideWeather={this.handleHideWeather} error={this.state.error} /> : null }
     </>
       
     )

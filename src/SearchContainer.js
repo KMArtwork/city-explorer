@@ -34,7 +34,7 @@ class SearchContainer extends React.Component {
       }
 
       let response = await axios(request);
-
+      
       this.setState({
         results: response.data
       })
