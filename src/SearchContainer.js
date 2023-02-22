@@ -38,9 +38,12 @@ class SearchContainer extends React.Component {
       this.setState({
         results: response.data
       })
+
     } catch (err) {
       console.log(err);
-      this.setState({error: err})
+      this.setState({
+        error: err
+      })
     }
   }
 
@@ -56,7 +59,12 @@ class SearchContainer extends React.Component {
           <Row style={{justifyContent: 'center'}}>
             {this.state.error 
               ? <h6>{this.state.error.message}</h6> 
-              : this.state.results.map((result) => <SearchResult name={result.display_name} lat={result.lat} lon={result.lon} icon={result.icon} />
+              : this.state.results.map((result) => <SearchResult 
+                name={result.display_name} 
+                lat={result.lat} 
+                lon={result.lon} 
+                icon={result.icon} 
+              />
             )}
           </Row>
         </Container>

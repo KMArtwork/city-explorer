@@ -2,7 +2,7 @@
 
 **Author**: Kawika Miller
 
-**Version**: 1.0.0 
+**Version**: 1.0.1 
 <!-- (increment the patch/fix version number if you make more commits past your first submission) -->
 
 ## Overview
@@ -16,23 +16,24 @@ This application utilizes JavaScript, React, Bootstrap, and Node
 
 ## Change Log
 2023-02-20 : Initialize project
+2023-02-20 : Add search bar and show results
 
 ## Credit and Collaborations
+Jacob Basset: Lab06 - WRRC Wireframing
 
+# Weekly Lab Information
 
------------------------
+## Lab 06 - Feb. 02, 2023
 
-# Lab06
-
-## Wireframing
+### Wireframing
 
 Planning WRRC logic with Jacob Basset
 
 ![Wireframe logic for WRRC](./src/wireframe.png)
 
-## Time Estimates
+### Time Estimates
 
-### Task 01 - Set Up React Repo & API Keys
+#### **Task 01 - Set Up React Repo & API Keys**
 
 Estimate of time needed to complete: 20m
 
@@ -42,7 +43,7 @@ Finish time: 3:40PM
 
 Actual time needed to complete: 25m
 
-### Task 02 - Locations
+#### **Task 02 - Locations**
 
 Estimate of time needed to complete: 45m
 
@@ -52,7 +53,7 @@ Finish time: 5:00PM
 
 Actual time needed to complete: 75m
 
-### Task 03 - Map
+#### **Task 03 - Map**
 
 Estimate of time needed to complete: 30m
 
@@ -64,7 +65,7 @@ Actual time needed to complete: 50m
 
 *At some point my Access Token stopped working and I was getting 403 errors so I had to troubleshoot that. I ended up renewing my access token and for some reason I had to add 'http://localhost/3000' to my list of HTTP referrers even though just 'localhost' was working for the first half of the lab? 
 
-### Task 04 - Errors
+#### **Task 04 - Errors**
 
 Estimate of time needed to complete: 5m
 
