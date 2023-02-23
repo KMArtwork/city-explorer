@@ -2,23 +2,29 @@
 
 **Author**: Kawika Miller
 
-**Version**: 1.0.2 
+**Version**: 1.0.3 
 <!-- (increment the patch/fix version number if you make more commits past your first submission) -->
 
 ## Overview
 This application will allow a user to query various APIs about a specified location (e.g. city, state, etc.) and receive relevant information about that area such as its geographic information or the restaurants &/o businesses in the area.
 
 ## Getting Started
-<!-- What are the steps that a user must take in order to build this app on their own machine and get it running? -->
+
+Deployed Site: https://kmartwork-city-explorer.netlify.app/
 
 ## Architecture
 This application utilizes JavaScript, React, Bootstrap, and Node
 
 ## Change Log
-2023-02-20 : Initialize project
-2023-02-20 : Add search bar and show results
-2023-02-21 : View weather results via request to local server .json file
-2023-02-21 : View weather results & movies via proxy request | client > server > 3rd party API
+**2023-02-20** : Initialize project
+
+**2023-02-20** : Add search bar and show results
+
+**2023-02-21** : Able to view weather results via request to local server .json file
+
+**2023-02-22** : Able to view weather results & movies results via proxy request | client > server > 3rd party API
+
+**2023-02-23** : Adjust CSS styling for whole site, add navbar and footer, move search to `<main>` element
 
 
 ## Credit and Collaborations
@@ -80,6 +86,30 @@ Finish time: 6:28PM
 Actual time needed to complete: 3m
 
 *I was already storing error messages in state so I just needed to implement some conditional logic to display the error
+
+---
+
+### Lab 07 - 08 in Back-End README
+
+[Back-End README](https://github.com/KMArtwork/city-explorer-api/blob/main/README.md)
+
+---
+
+### Lab 09 - Refactoring
+
+***Task 01 in [Back-End README](https://github.com/KMArtwork/city-explorer-api/blob/main/README.md)***
+
+#### **Task 02 - Refactor Front End**
+
+Estimate of time needed to complete: 5m
+
+Start time: 2:10PM
+
+Finish time: 2:13PM
+
+Actual time needed to complete: 3m
+
+*I actually ended up doing this last night without realizing this was what today's lab was supposed to be all about. The weather is rendered as a 7 day forecast using bootstrap's modal and card components and the movies are rendered using bootstrap's modal and carousel components.
 
 -----------------------
 
