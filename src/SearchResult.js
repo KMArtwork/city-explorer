@@ -3,19 +3,23 @@ import Card from 'react-bootstrap/Card';
 import Button from "react-bootstrap/Button";
 import axios from "axios";
 import Weather from "./Weather";
+import Movies from "./Movies";
 
 const ACCESS_TOKEN = process.env.REACT_APP_ACCESS_TOKEN;
-// const SERVER_URL = process.env.REACT_APP_EXPRESS_SERVER_URL;
-const SERVER_URL = 'http://localhost:3001'
+const SERVER_URL = process.env.REACT_APP_EXPRESS_SERVER_URL;
+// const SERVER_URL = 'http://localhost:3001'
 
 class SearchResult extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      error: null,
-      showModal: false,
+      weatherError: null,
+      movieError: null,
+      showWeather: false,
+      showMovies: false,
       weather: null,
+      movies: null,
     }
   }
 
@@ -36,19 +40,48 @@ class SearchResult extends React.Component {
       console.log(response);
       this.setState({
         weather: response.data,
-        showModal: true
+        showWeather: true
       })
     } catch (err) {
       this.setState({
-        showModal: true,
-        error: err
+        showWeather: true,
+        weatherError: err
       })
     }
   }
 
   handleHideWeather = () => {
     this.setState({
-      showModal: false
+      showWeather: false
+    })
+  }
+
+  handleDisplayMovies = async () => {
+    let cityName = this.props.name.slice(0, this.props.name.indexOf(','));
+
+    try {
+      let request = {
+        url: `${SERVER_URL}/movies?city=${cityName}`,
+        method: 'GET'
+      }
+
+      let response = await axios(request);
+      console.log(response);
+      this.setState({
+        movies: response.data,
+        showMovies: true
+      })
+    } catch (err) {
+      this.setState({
+        showMovies: true,
+        movieError: err
+      })
+    }
+  }
+
+  handleHideMovies = () => {
+    this.setState({
+      showMovies: false
     })
   }
 
@@ -66,6 +99,7 @@ class SearchResult extends React.Component {
             alt={this.props.name} 
           />
           <Button variant="success" onClick={this.handleDisplayWeather}>Weather</Button>
+          <Button variant="success" onClick={this.handleDisplayMovies}>Movies</Button>
         </Card.Body>
         <Card.Footer>
           <h6>Lat: {this.props.lat}</h6>
@@ -73,8 +107,11 @@ class SearchResult extends React.Component {
         </Card.Footer>
       </Card>
 
-      {this.state.showModal ? 
-        <Weather weather={this.state.weather} showModal={this.state.showModal} handleHideWeather={this.handleHideWeather} error={this.state.error} /> : null }
+      {this.state.showWeather ? 
+        <Weather weather={this.state.weather} showWeather={this.state.showWeather} handleHideWeather={this.handleHideWeather} weatherError={this.state.weatherError} /> : null }
+
+      {this.state.showMovies ? 
+        <Movies movies={this.state.movies} showMovies={this.state.showMovies} handleHideMovies={this.handleHideMovies} movieError={this.state.movieError} /> : null }
     </>
       
     )
