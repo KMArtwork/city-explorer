@@ -111,8 +111,6 @@ Actual time needed to complete: 3m
 *I actually ended up doing this last night without realizing this was what today's lab was supposed to be all about. The weather is rendered as a 7 day forecast using bootstrap's modal and card components and the movies are rendered using bootstrap's modal and carousel components.
 
 -----------------------
-
-
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
