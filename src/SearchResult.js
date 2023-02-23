@@ -5,6 +5,8 @@ import axios from "axios";
 import Weather from "./Weather";
 
 const ACCESS_TOKEN = process.env.REACT_APP_ACCESS_TOKEN;
+// const SERVER_URL = process.env.REACT_APP_EXPRESS_SERVER_URL;
+const SERVER_URL = 'http://localhost:3001'
 
 class SearchResult extends React.Component {
   constructor(props) {
@@ -17,10 +19,16 @@ class SearchResult extends React.Component {
     }
   }
 
+  // handleTestSlice = () => {
+  //   console.log(this.props.name.slice(0, this.props.name.indexOf(',') ));
+  // }
+
   handleDisplayWeather = async () => {
+    let cityName = this.props.name.slice(0, this.props.name.indexOf(','));
+
     try {
       let request = {
-        url: `http://localhost:3001/weather?city=${this.props.name}&lat=${this.props.lat}&lon=${this.props.lon}`,
+        url: `${SERVER_URL}/weather?city=${cityName}&lat=${this.props.lat}&lon=${this.props.lon}`,
         method: 'GET'
       }
 
