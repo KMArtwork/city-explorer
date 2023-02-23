@@ -30,7 +30,6 @@ This application utilizes JavaScript, React, Bootstrap, and Node
 ## Credit and Collaborations
 Jacob Basset: Lab06 - WRRC Wireframing
 
-
 # Weekly Lab Information
 
 ## Lab 06 - Feb. 02, 2023
