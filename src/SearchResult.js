@@ -89,8 +89,8 @@ class SearchResult extends React.Component {
 
     return(
       <>
-        <Card bg='primary' style={{width: '16rem', height: '25rem', margin: '1rem'}}>
-        <Card.Header style={{ overflowY: 'scroll'}}>
+        <Card style={{width: '16rem', height: '25rem', margin: '1rem'}}>
+        <Card.Header>
           <h6>{this.props.name}</h6>
         </Card.Header>
         <Card.Body>

@@ -1,3 +1,11 @@
+:root {
+  --gunmetal: #282C34;
+  --viridian:  #498467;
+  --mint: #52B788;
+  --celadon: #B2D3A8;
+  --vanilla: #EDE5A6;
+}
+
 .App {
   text-align: center;
 }
@@ -14,25 +22,75 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: var(--viridian);
+  display: flex;
+  font-size: 1rem;
+}
+
+body .App {
+  background-color: var(--gunmetal);
   min-height: 100vh;
+}
+
+header a {
+  color: white !important;
+}
+
+header span {
+  color: white !important;
+}
+
+main {
+  color:var(--celadon);
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+}
+
+div .card {
+  background-color: var(--viridian);
   color: white;
+  border: 2px solid var(--mint);
 }
 
-.App-link {
-  color: #61dafb;
+div .card-header {
+  padding: 0 !important;
+  background-color: rgba(0, 0, 0, 0) !important;
+  border-bottom: none !important;
+  overflow-y: hidden;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.card-group .card {
+  text-align: center;
+  background-color: white;
+  color:var(--gunmetal);
+}
+
+.card button {
+  background-color: var(--mint);
+  margin: 0 0.25rem;
+}
+
+div img.card-img {
+  margin-bottom: 0.25rem;
+}
+
+div.card .card-footer {
+  border-top: none;
+}
+
+#searchbar button {
+  margin: 1rem;
+  background-color: var(--mint);
+}
+
+div.modal-header {
+  justify-content: center;
+}
+
+footer h5 {
+  padding: 0.5rem !important;
+  margin: 0 !important;
+  background-color: var(--viridian);
 }

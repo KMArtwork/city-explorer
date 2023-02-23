@@ -1,14 +1,21 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import SearchContainer from './SearchContainer';
+import Navbar from './Navbar'
 
 function App() {
   return (
-    <div className="App">
+    <body className="App">
       <header className="App-header">
-        <SearchContainer />
+        <Navbar />
       </header>
-    </div>
+      <main>
+        <SearchContainer />
+      </main>
+      <footer>
+        <h5>Created by: Kawika Miller | https://github.com/KMArtwork/city-explorer </h5>
+      </footer>
+    </body>
   );
 }
 
