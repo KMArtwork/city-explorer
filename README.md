@@ -2,7 +2,7 @@
 
 **Author**: Kawika Miller
 
-**Version**: 1.0.1 
+**Version**: 1.0.2 
 <!-- (increment the patch/fix version number if you make more commits past your first submission) -->
 
 ## Overview
@@ -17,9 +17,13 @@ This application utilizes JavaScript, React, Bootstrap, and Node
 ## Change Log
 2023-02-20 : Initialize project
 2023-02-20 : Add search bar and show results
+2023-02-21 : View weather results via request to local server .json file
+2023-02-21 : View weather results & movies via proxy request | client > server > 3rd party API
+
 
 ## Credit and Collaborations
 Jacob Basset: Lab06 - WRRC Wireframing
+
 
 # Weekly Lab Information
 

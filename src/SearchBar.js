@@ -15,7 +15,7 @@ class SearchBar extends React.Component {
     return(
       <section id="searchbar">
         <Form>
-          <Form.Label htmlFor='searchLoc'>Location:</Form.Label>
+          <Form.Label htmlFor='searchLoc'>Search for a Location:</Form.Label>
           <Form.Control 
             type='text' 
             id='searchLoc' 
@@ -23,7 +23,7 @@ class SearchBar extends React.Component {
             placeholder='Enter a location...' 
             onChange={(event) => this.props.handleInputChange(event)}
           />
-          <Button id='searchSubmit' name='searchSubmit' onClick={(event) => this.props.handleSubmitQuery(event)}>Explore!</Button>
+          <Button variant='success' id='searchSubmit' name='searchSubmit' onClick={(event) => this.props.handleSubmitQuery(event)}>Explore!</Button>
         </Form>
       </section>
     )

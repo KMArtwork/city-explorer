@@ -1,5 +1,7 @@
 import React from "react";
 import Modal from "react-bootstrap/Modal";
+import { CardGroup } from "react-bootstrap";
+import WeatherCard from "./WeatherCard";
 
 class Weather extends React.Component {
   constructor(props){
@@ -12,10 +14,20 @@ class Weather extends React.Component {
 
   render(){
     return(
-      <Modal show={this.props.showWeather} onHide={this.props.handleHideWeather} centered >
-        <Modal.Header closeButton>7 Day Weather Forecast</Modal.Header>
+      <Modal 
+        show={this.props.showWeather} 
+        onHide={this.props.handleHideWeather} 
+        size='xl'
+        centered 
+      >
+        <Modal.Header closeButton><h3>7 Day Weather Forecast</h3></Modal.Header>
         <Modal.Body>
-          {this.props.weatherError ? <p>{this.props.weatherError.message} | {this.props.weatherError.response.data}</p>: this.props.weather.map(element => <p>{element.date}: {element.description}</p>) }
+        {this.props.weatherError ? 
+        <p>{this.props.weatherError.message} | {this.props.weatherError.response.data}</p>
+        : <CardGroup style={{width: '100%'}}>
+            {this.props.weather.map(element => <WeatherCard date={element.date} description={element.description} icon={element.icon} low={element.low} high={element.high} />)}
+          </CardGroup>
+        }
         </Modal.Body>
       </Modal>
     )
