@@ -12,10 +12,10 @@ class Weather extends React.Component {
 
   render(){
     return(
-      <Modal show={this.props.showModal} onHide={this.props.handleHideWeather} centered >
-        <Modal.Header closeButton>Weather Forecast</Modal.Header>
+      <Modal show={this.props.showWeather} onHide={this.props.handleHideWeather} centered >
+        <Modal.Header closeButton>7 Day Weather Forecast</Modal.Header>
         <Modal.Body>
-          {this.props.error ? <p>{this.props.error.message} | {this.props.error.response.data}</p>: this.props.weather.map(element => <p>{element.date}: {element.description}</p>) }
+          {this.props.weatherError ? <p>{this.props.weatherError.message} | {this.props.weatherError.response.data}</p>: this.props.weather.map(element => <p>{element.date}: {element.description}</p>) }
         </Modal.Body>
       </Modal>
     )
