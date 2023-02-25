@@ -6,8 +6,8 @@ import Weather from "./Weather";
 import Movies from "./Movies";
 
 const ACCESS_TOKEN = process.env.REACT_APP_ACCESS_TOKEN;
-const SERVER_URL = process.env.REACT_APP_EXPRESS_SERVER_URL;
-// const SERVER_URL = 'http://localhost:3001'
+// const SERVER_URL = process.env.REACT_APP_EXPRESS_SERVER_URL;
+const SERVER_URL = 'http://localhost:3001'
 
 class SearchResult extends React.Component {
   constructor(props) {
@@ -18,8 +18,8 @@ class SearchResult extends React.Component {
       movieError: null,
       showWeather: false,
       showMovies: false,
-      weather: null,
-      movies: null,
+      weatherData: null,
+      movieData: null,
     }
   }
 
@@ -39,7 +39,7 @@ class SearchResult extends React.Component {
       let response = await axios(request);
       console.log(response);
       this.setState({
-        weather: response.data,
+        weatherData: response.data,
         showWeather: true
       })
     } catch (err) {
@@ -68,7 +68,7 @@ class SearchResult extends React.Component {
       let response = await axios(request);
       console.log(response);
       this.setState({
-        movies: response.data,
+        movieData: response.data,
         showMovies: true
       })
     } catch (err) {
@@ -89,7 +89,7 @@ class SearchResult extends React.Component {
 
     return(
       <>
-        <Card style={{width: '16rem', height: '25rem', margin: '1rem'}}>
+      <Card style={{width: '16rem', height: '25rem', margin: '1rem'}}>
         <Card.Header>
           <h6>{this.props.name}</h6>
         </Card.Header>
@@ -108,11 +108,11 @@ class SearchResult extends React.Component {
       </Card>
 
       {this.state.showWeather ? 
-        <Weather weather={this.state.weather} showWeather={this.state.showWeather} handleHideWeather={this.handleHideWeather} weatherError={this.state.weatherError} /> : null }
+        <Weather weatherData={this.state.weatherData} showWeather={this.state.showWeather} handleHideWeather={this.handleHideWeather} weatherError={this.state.weatherError} /> : null }
 
       {this.state.showMovies ? 
-        <Movies movies={this.state.movies} showMovies={this.state.showMovies} handleHideMovies={this.handleHideMovies} movieError={this.state.movieError} /> : null }
-    </>
+        <Movies movieData={this.state.movieData} showMovies={this.state.showMovies} handleHideMovies={this.handleHideMovies} movieError={this.state.movieError} /> : null }
+      </>
       
     )
   }
