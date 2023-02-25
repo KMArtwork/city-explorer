@@ -18,7 +18,7 @@ class SearchResult extends React.Component {
       movieError: null,
       showWeather: false,
       showMovies: false,
-      weather: null,
+      weatherData: null,
       movieData: null,
     }
   }
@@ -39,7 +39,7 @@ class SearchResult extends React.Component {
       let response = await axios(request);
       console.log(response);
       this.setState({
-        weather: response.data,
+        weatherData: response.data,
         showWeather: true
       })
     } catch (err) {
@@ -108,7 +108,7 @@ class SearchResult extends React.Component {
       </Card>
 
       {this.state.showWeather ? 
-        <Weather weather={this.state.weather} showWeather={this.state.showWeather} handleHideWeather={this.handleHideWeather} weatherError={this.state.weatherError} /> : null }
+        <Weather weatherData={this.state.weatherData} showWeather={this.state.showWeather} handleHideWeather={this.handleHideWeather} weatherError={this.state.weatherError} /> : null }
 
       {this.state.showMovies ? 
         <Movies movieData={this.state.movieData} showMovies={this.state.showMovies} handleHideMovies={this.handleHideMovies} movieError={this.state.movieError} /> : null }

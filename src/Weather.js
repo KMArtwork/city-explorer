@@ -25,10 +25,11 @@ class Weather extends React.Component {
         {this.props.weatherError ? 
         <p>{this.props.weatherError.message} | {this.props.weatherError.response.data}</p>
         : <CardGroup style={{width: '100%'}}>
-            {this.props.weather.map(element => <WeatherCard date={element.date} description={element.description} icon={element.icon} low={element.low} high={element.high} />)}
+            {this.props.weatherData.forecast.map(element => <WeatherCard date={element.date} description={element.description} icon={element.icon} low={element.low} high={element.high} />)}
           </CardGroup>
         }
         </Modal.Body>
+        <Modal.Footer><h6>Last Updated: {Date(this.props.weatherData.timestamp)}</h6></Modal.Footer>
       </Modal>
     )
   }
