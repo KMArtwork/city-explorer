@@ -6,8 +6,8 @@ import Weather from "./Weather";
 import Movies from "./Movies";
 
 const ACCESS_TOKEN = process.env.REACT_APP_ACCESS_TOKEN;
-// const SERVER_URL = process.env.REACT_APP_EXPRESS_SERVER_URL;
-const SERVER_URL = 'http://localhost:3001'
+const SERVER_URL = process.env.REACT_APP_EXPRESS_SERVER_URL;
+// const SERVER_URL = 'http://localhost:3001'
 
 class SearchResult extends React.Component {
   constructor(props) {
