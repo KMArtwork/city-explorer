@@ -2,7 +2,7 @@
 
 **Author**: Kawika Miller
 
-**Version**: 1.0.3 
+**Version**: 1.0.4 
 <!-- (increment the patch/fix version number if you make more commits past your first submission) -->
 
 ## Overview
@@ -26,9 +26,13 @@ This application utilizes JavaScript, React, Bootstrap, and Node
 
 **2023-02-23** : Adjust CSS styling for whole site, add navbar and footer, move search to `<main>` element
 
+**2023-02-24** : Display 'last updated' time | Last time data was updated via API call
+
 
 ## Credit and Collaborations
 Jacob Basset: Lab06 - WRRC Wireframing
+
+---
 
 # Weekly Lab Information
 
@@ -109,6 +113,20 @@ Finish time: 2:13PM
 Actual time needed to complete: 3m
 
 *I actually ended up doing this last night without realizing this was what today's lab was supposed to be all about. The weather is rendered as a 7 day forecast using bootstrap's modal and card components and the movies are rendered using bootstrap's modal and carousel components.
+
+---
+
+### Lab 10 - Performance
+
+#### **Task 01 - Display Timestamp**
+
+Estimate of time needed to complete: 20m
+
+Start time: 4:10PM
+
+Finish time: 4:33PM
+
+Actual time needed to complete: 23m
 
 -----------------------
 # Getting Started with Create React App
